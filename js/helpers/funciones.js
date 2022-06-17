@@ -1,5 +1,6 @@
 var familias = []
 const formulario = document.getElementById('info-familia')
+const boton = document.querySelector('.boton')
 
 export const validarForm = (e) =>{
     e.preventDefault()
@@ -10,7 +11,7 @@ export const validarForm = (e) =>{
     const apellido = document.querySelector('.apellido').value
     const edad = document.querySelector('.edad').value
     const hobbie = document.querySelector('.hobbie').value
-
+    
     if([nombre, apellido, edad, hobbie].includes('')){
         mostrarMensaje("Debe llenar todos los campos", true)
     }else{   
@@ -26,12 +27,22 @@ const guardarDatos = (cargo, nombre, apellido, edad, hobbie) =>{
         "edad" : edad,
         "hobbie" : hobbie
     }
-    formulario.reset()
-
-    familias.push(familia)//agrega la informacion al Arreglo
-    console.log("JSON: "+JSON.stringify(familias))//convertirlo a JSON
-    listarDOM(familias)//mostrar en el Fomulario
+    formulario.reset()    
+    
+    familias.push(familia)
+    imprimirJson()
+    
+    listarDOM(familias)
     console.table(familia)
+}
+
+export const imprimirJson = () => {
+    const listaJson = JSON.stringify(familias)//convertirlo a JSON
+    const p = document.createElement('p')
+    p.textContent = listaJson
+    console.log(p)
+
+    return p
 }
 
 const listarDOM = (familias) => {
