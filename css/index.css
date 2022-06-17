@@ -1,92 +1,12 @@
 *{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-form{
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 0 20px -4px #674ae8
-}
-
-.imagen{
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
-
-.form-group{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 9px;
-}
-select{ 
-    width: 100%;
-    padding: 5px;
-    border: none;
-    border-bottom: 1px solid rgb(4, 4, 4);
-}
-select:focus{ 
-    outline: none;
-    border-bottom: 1px solid rgb(4, 4, 4);
-}
-input{
-    width: 100%;
-    background-color: transparent;
-    padding: 5px;
-    border: none;
-    border-bottom: 1.5px solid rgb(4, 4, 4);
-}
-input:focus{
-    outline: none;
-    transition: 1s;
-    border-bottom: 1.5px solid rgb(245, 4, 4);
-}
-input[type="submit"]{
-    width: 50%;
-    background-color: rgb(91, 176, 229);
-    padding: 5px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 2px 3px 7px -2px #674ae8;
-}
-input[type="submit"]:hover{
-    color: white;
-    transition: 0.8s;
-    background-color: crimson;
-    box-shadow: 2px 3px 7px -2px #6d6688;
-}
-
-.nom-ape{
-    display: flex;
-    gap: 20px;
-}
-
-#listado-familia{
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 10px;
-    padding: 5px;
-    width: 400px;
-    gap: 30px;
-    border: 1px solid black;
-}
-.error{
-    width: 80%;
-    padding: 5px;
+#contenido{
+    padding: 30px;
     text-align: center;
-    color : white;
-    background-color: darkred;
+}
+
+a{
+    text-decoration: none;
+    color: crimson;
 }
