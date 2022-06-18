@@ -1,6 +1,6 @@
 var familias = []
 const formulario = document.getElementById('info-familia')
-const boton = document.querySelector('.boton')
+
 
 export const validarForm = (e) =>{
     e.preventDefault()
@@ -30,19 +30,18 @@ const guardarDatos = (cargo, nombre, apellido, edad, hobbie) =>{
     formulario.reset()    
     
     familias.push(familia)
-    imprimirJson()
     
     listarDOM(familias)
     console.table(familia)
 }
 
 export const imprimirJson = () => {
-    const listaJson = JSON.stringify(familias)//convertirlo a JSON
+   
+    const listado = document.querySelector('#listado-json')
+    const listaJson = "JSON: "+JSON.stringify(familias)//convertirlo a JSON
     const p = document.createElement('p')
     p.textContent = listaJson
-    console.log(p)
-
-    return p
+    listado.appendChild(p)
 }
 
 const listarDOM = (familias) => {
@@ -77,11 +76,19 @@ const mostrarMensaje = (menj, error) => {
     }
 }
 
-const limpiarHTML = () => {
+export const limpiarHTML = () => {
+
+    formulario.reset()
     const listadoFamilia = document.querySelector('#listado-familia');
     if(listadoFamilia){
         while(listadoFamilia.firstChild){
             listadoFamilia.removeChild(listadoFamilia.firstChild);
+        };
+    };
+    const listadoJson = document.querySelector('#listado-json');
+    if(listadoJson){
+        while(listadoJson.firstChild){
+            listadoJson.removeChild(listadoJson.firstChild);
         };
     };
 }

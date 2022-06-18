@@ -58,6 +58,7 @@ input[type="submit"]{
     width: 50%;
     background-color: rgb(91, 176, 229);
     padding: 5px;
+    margin: 10px;
     border: none;
     border-radius: 10px;
     box-shadow: 2px 3px 7px -2px #674ae8;
@@ -82,6 +83,15 @@ input[type="submit"]:hover{
     width: 400px;
     gap: 30px;
     border: 1px solid black;
+}
+
+#listado-json{
+    width: 420px;
+}
+
+#ver-clean{
+    display: flex;
+    width: 420px;
 }
 .error{
     width: 80%;
