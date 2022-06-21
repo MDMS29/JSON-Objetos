@@ -1,6 +1,11 @@
 var familias = []
-const formulario = document.getElementById('info-familia')
+var imagenes=new Array()
+imagenes[0]="src/papa.jpg"
+imagenes[1]="src/mama.jpg"
+imagenes[2]="src/niña.jpg"
+imagenes[3]="src/niño.jpg"
 
+const formulario = document.getElementById('info-familia')
 
 export const validarForm = (e) =>{
     e.preventDefault()
@@ -14,13 +19,15 @@ export const validarForm = (e) =>{
     
     if([nombre, apellido, edad, hobbie].includes('')){
         mostrarMensaje("Debe llenar todos los campos", true)
-    }else{   
-        guardarDatos(cargo, nombre, apellido, edad, hobbie)
+    }else{
+        var img = imprimirImg(cargo);   
+        guardarDatos(img, cargo, nombre, apellido, edad, hobbie)  
     }
 }
 
-const guardarDatos = (cargo, nombre, apellido, edad, hobbie) =>{
+const guardarDatos = (img, cargo, nombre, apellido, edad, hobbie) =>{
     var familia = {
+        "foto" : img,
         "cargo" : cargo,
         "nombre" : nombre,
         "apellido" : apellido,
@@ -31,6 +38,8 @@ const guardarDatos = (cargo, nombre, apellido, edad, hobbie) =>{
     
     familias.push(familia)
     
+    console.table(familias)
+
     listarDOM(familias)
     console.table(familia)
 }
@@ -52,6 +61,7 @@ const listarDOM = (familias) => {
         if(listadoFamilia){
            listadoFamilia.innerHTML += `
                 <div id="Personas">
+                    <div id="imagenFoto"><img id="foto" src="${familias[i].foto}"></div>
                     <p class="cargo"> Cargo Familiar: ${familias[i].cargo} </p>
                     <p class="nombres"> Nombre(s): ${familias[i].nombre} </p>
                     <p class="apellidos"> Apellido(s): ${familias[i].apellido}</p>
@@ -92,3 +102,34 @@ export const limpiarHTML = () => {
         };
     };
 }
+
+const imprimirImg = (cargo) => {
+    if(cargo == 'Papá'){
+        let foto = imagenes[0];
+        return foto;
+    }
+    if(cargo == 'Mamá'){
+        let foto = imagenes[1];
+        return foto
+    }
+    if(cargo == 'Hija'){
+        let foto = imagenes[2];
+        return foto
+    }
+    if(cargo == 'Hijo'){
+        let foto = imagenes[3];
+        return foto
+    }
+}
+
+// const llamarJSON = async () => {
+//     try{
+//         const familia = await fetch('familias.json')
+//         const listaFamilia = await familia.json()
+
+//         console.log(listaFamilia.familias)
+//     }catch (error){
+//         console.log(error)
+//     }
+// }
+// console.log(llamarJSON())

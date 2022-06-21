@@ -100,3 +100,12 @@ input[type="submit"]:hover{
     color : white;
     background-color: darkred;
 }
+img{
+    width: 100px;
+    height: 100px;
+}
+
+#imagenFoto{
+    display: flex;
+    justify-content: center;
+}

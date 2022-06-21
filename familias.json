@@ -1,0 +1,11 @@
+{
+    "familias" : [
+        {
+            "url" : "/src/papa.jpg",
+            "nombre" : "nombre",
+            "apellido" : "apellido",
+            "edad" : "edad",
+            "hobbies" : "hobbies"
+        }
+    ]
+}
